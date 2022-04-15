@@ -1,0 +1,9 @@
+input {
+  width: 50%;
+}
+textarea {
+  width: 100%;
+}
+.script-toChange{
+  height: 200px;
+}
