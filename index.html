@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index.css">
-    <title>Document</title>
-  </head>
-  <body>
-    <form autocomplete="off" id="scriptForm">
-    <label>머릿말 : <input type="text"  class="script-head"/></label>
-    <hr />
-    <label>바꿀 내용 : 
-      <textarea  class="script-toChange" name="textToChange"/></textarea>
-  </label>
-    <hr />
-    <button type="submit">확인</button>
-    </form>
-    <!-- <label>결과 : <input type="text" /></label> -->
-    <div class="change-result"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/index.css" />
+  <title>TRPG 스크립트 도우미</title>
+</head>
 
-    <!-- 이미지 -->
-    <script src="js/split.js"></script>
-  </body>
+<body>
+  <form autocomplete="off" id="scriptForm">
+    <fieldset id="script-header">
+      <legend>머리말</legend>
+      <input type="text" class="script-head" />
+    </fieldset>
+    <fieldset>
+      <legend>바꿀 내용</legend>
+      <textarea class="script-toChange" name="textToChange" /></textarea>
+      <button type="submit">확인</button>
+    </fieldset>
+    <fieldset class="changed-result">
+      <legend>결과</legend>
+      <button onclick="adddiv()" type="button">임시 확인용 </button>
+      <!-- <article>
+        <input type="text" class="splited-script" />
+        <button type="button" class="copyBtn" onclick="copyText()">복사</button>
+      </article> -->
+    </fieldset>
+  </form>
+  <script src="js/split.js"></script>
+  <!-- <script src="js/copy.js"></script> -->
+</body>
+
 </html>
