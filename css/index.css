@@ -1,9 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap');
+* {
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
 input {
   width: 50%;
+  overflow: visible;
 }
 textarea {
   width: 100%;
+  
 }
 .script-toChange{
   height: 200px;
 }
+.splited-script {
+  width: 80%;
+  margin: 5px 10px 5px 0px;
+}
+
+#scriptForm legend{
+  font-weight: 700;
+}
+#scriptForm fieldset{
+    border: solid 1px rgb(0, 0,0, 0.1);
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
