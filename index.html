@@ -12,7 +12,7 @@
   <form autocomplete="off" id="scriptForm">
     <fieldset id="script-header">
       <legend>머리말</legend>
-      <input type="text" class="script-head" />
+      <input type="text" class="script-head" value="/desc"/>
     </fieldset>
     <fieldset>
       <legend>바꿀 내용</legend>
@@ -21,11 +21,8 @@
     </fieldset>
     <fieldset class="changed-result">
       <legend>결과</legend>
-      <button onclick="adddiv()" type="button">임시 확인용 </button>
-      <!-- <article>
-        <input type="text" class="splited-script" />
-        <button type="button" class="copyBtn" onclick="copyText()">복사</button>
-      </article> -->
+      <button onclick="addDiv('')" type="button">임의 추가 </button>
+      <div></div>
     </fieldset>
   </form>
   <script src="js/split.js"></script>
