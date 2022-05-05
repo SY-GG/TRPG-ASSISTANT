@@ -1,10 +1,11 @@
 const scriptForm = document.querySelector('#scriptForm');
-const textToChange = document.querySelector('textarea[name="textToChange"]');
-scriptForm.addEventListener('submit', onScriptSubmit);
+const scriptToChange = document.querySelector('textarea[name="scriptToChange"]');
+scriptForm.addEventListener('submit', submitScript);
 
-function onScriptSubmit(event) {
+// 확인 버튼 누르면
+function submitScript(event) {
   event.preventDefault();
-  let result = trimScript(textToChange.value);
+  let result = trimScript(scriptToChange.value);
   console.log(result)
 }
 
@@ -15,12 +16,3 @@ function trimScript(scriptToChange) {
   result = result.split(/(?<=[!?.])/);
   return result;
 }
-
-
-
-
-
-
-
-
-
