@@ -10,23 +10,22 @@
 
 <body>
   <form autocomplete="off" id="scriptForm">
-    <fieldset id="script-header">
-      <legend>머리말</legend>
-      <input type="text" class="script-head" value="/desc"/>
+    <fieldset id="fieldset-command">
+      <legend>머릿말(명령어)</legend>
+      <input type="text" class="command" value="/desc"/>
     </fieldset>
     <fieldset>
       <legend>바꿀 내용</legend>
-      <textarea class="script-toChange" name="textToChange" /></textarea>
+      <textarea class="scriptToChange" name="scriptToChange" /></textarea>
       <button type="submit">확인</button>
     </fieldset>
-    <fieldset class="changed-result">
+    <fieldset class="fieldset-result">
       <legend>결과</legend>
-      <button onclick="addDiv('')" type="button">임의 추가 </button>
+      <button type="button">임의 추가 </button>
       <div></div>
     </fieldset>
   </form>
   <script src="js/split.js"></script>
-  <!-- <script src="js/copy.js"></script> -->
 </body>
 
 </html>
