@@ -3,10 +3,13 @@ scriptForm.addEventListener('submit', submitScript);
 
 function submitScript(event) {
   event.preventDefault();
+  
+  resetResultDiv();
 
   const scriptToChangeEl = document.querySelector('textarea[name="scriptToChange"]');
   const scriptToChangeValue = scriptToChangeEl.value;
   let trimedScript = trimScript(scriptToChangeValue);
+  
   makeScriptResult(trimedScript);
 }
 
@@ -24,6 +27,14 @@ function makeScriptResult(trimedScript) {
     const copyText = `${commandWord} ${content}`;
     makeResultDiv(copyText);
   });
+}
+
+function resetResultDiv() {
+  const resultField = document.querySelector('.fieldset-result');
+  const resultDiv = document.querySelector('.fieldset-result div');
+  const newDiv = document.createElement('div');
+  resultDiv.remove();
+  resultField.appendChild(newDiv);
 }
 
 //임의 추가 버튼
