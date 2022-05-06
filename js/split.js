@@ -1,18 +1,80 @@
 const scriptForm = document.querySelector('#scriptForm');
-const scriptToChange = document.querySelector('textarea[name="scriptToChange"]');
 scriptForm.addEventListener('submit', submitScript);
 
-// 확인 버튼 누르면
 function submitScript(event) {
   event.preventDefault();
-  let result = trimScript(scriptToChange.value);
-  console.log(result)
+  
+  resetResultDiv();
+
+  const scriptToChangeEl = document.querySelector('textarea[name="scriptToChange"]');
+  const scriptToChangeValue = scriptToChangeEl.value;
+  let trimedScript = trimScript(scriptToChangeValue);
+  
+  makeScriptResult(trimedScript);
 }
 
-//TEXT 다듬고 자르기:
 function trimScript(scriptToChange) {
   let result = scriptToChange.replaceAll(/[\n]{1,}/g, '');
   result = result.replaceAll(/([.]{2,})/g, '…');
   result = result.split(/(?<=[!?.])/);
   return result;
+}
+
+function makeScriptResult(trimedScript) {
+  const commandWord = document.querySelector('.command').value;
+  trimedScript.forEach((element) => {
+    const content = element.trim();
+    const copyText = `${commandWord} ${content}`;
+    makeResultDiv(copyText);
+  });
+}
+
+function resetResultDiv() {
+  const resultField = document.querySelector('.fieldset-result');
+  const resultDiv = document.querySelector('.fieldset-result div');
+  const newDiv = document.createElement('div');
+  resultDiv.remove();
+  resultField.appendChild(newDiv);
+}
+
+//임의 추가 버튼
+const addOptionBtn = document.querySelector('button[name="addOptionBtn"]');
+addOptionBtn.addEventListener('click', () => {
+  makeResultDiv('');
+});
+console.log(addOptionBtn);
+
+function makeResultDiv(textValue) {
+  const resultDiv = document.querySelector('.fieldset-result div');
+  const newResultInput = makeArticle(textValue);
+  resultDiv.appendChild(newResultInput);
+}
+
+// article 태그
+//   ㄴinput (textValue)
+//   ㄴbutton (복사 func.)
+function makeArticle(textValue) {
+  const newArticle = document.createElement('article');
+
+  const newInput = document.createElement('input');
+  newInput.type = 'text';
+  newInput.className = 'splited-script';
+  newInput.value = textValue;
+
+  const newPasteBtn = document.createElement('button');
+  newPasteBtn.type = 'button';
+  newPasteBtn.className = 'copyBtn';
+  newPasteBtn.textContent = '복사';
+  newPasteBtn.addEventListener('click', copyPreviousScript);
+
+  newArticle.appendChild(newInput);
+  newArticle.appendChild(newPasteBtn);
+
+  return newArticle;
+}
+
+function copyPreviousScript(event) {
+  const text = event.target.previousElementSibling;
+  text.select();
+  document.execCommand('copy');
 }
