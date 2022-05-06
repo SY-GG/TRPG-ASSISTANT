@@ -1,12 +1,13 @@
 const scriptForm = document.querySelector('#scriptForm');
-const scriptToChange = document.querySelector('textarea[name="scriptToChange"]');
-
 scriptForm.addEventListener('submit', submitScript);
 
 function submitScript(event) {
   event.preventDefault();
-  let result = trimScript(scriptToChange.value);
-  console.log(result); //이후 result를 각각 div에 더하기
+
+  const scriptToChangeEl = document.querySelector('textarea[name="scriptToChange"]');
+  const scriptToChangeValue = scriptToChangeEl.value;
+  let trimedScript = trimScript(scriptToChangeValue);
+  makeScriptResult(trimedScript);
 }
 
 function trimScript(scriptToChange) {
@@ -14,6 +15,15 @@ function trimScript(scriptToChange) {
   result = result.replaceAll(/([.]{2,})/g, '…');
   result = result.split(/(?<=[!?.])/);
   return result;
+}
+
+function makeScriptResult(trimedScript) {
+  const commandWord = document.querySelector('.command').value;
+  trimedScript.forEach((element) => {
+    const content = element.trim();
+    const copyText = `${commandWord} ${content}`;
+    makeResultDiv(copyText);
+  });
 }
 
 //임의 추가 버튼
