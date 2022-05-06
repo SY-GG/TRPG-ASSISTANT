@@ -65,9 +65,16 @@ function makeArticle(textValue) {
   newPasteBtn.type = 'button';
   newPasteBtn.className = 'copyBtn';
   newPasteBtn.textContent = '복사';
+  newPasteBtn.addEventListener('click', copyPreviousScript);
 
   newArticle.appendChild(newInput);
   newArticle.appendChild(newPasteBtn);
 
   return newArticle;
+}
+
+function copyPreviousScript(event) {
+  const text = event.target.previousElementSibling;
+  text.select();
+  document.execCommand('copy');
 }
