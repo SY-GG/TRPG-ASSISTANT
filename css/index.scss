@@ -63,6 +63,10 @@ button {
 }
 
 #fieldset-replace {
+  .delimeter {
+    width: 10%;
+    margin-bottom: 10px;
+  }
   .replace-wrap {
     display: flex;
     flex-direction: row;
