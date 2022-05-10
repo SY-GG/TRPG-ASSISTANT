@@ -20,9 +20,12 @@
     <fieldset id="fieldset-replace">
       <legend>바꿀 내용</legend>
       <section class="replace-wrap">
-        <textarea class="scriptToChange" name="scriptToChange" placeholder="바꿀 내용을 입력해주세요!" /></textarea>
-        <button type="submit">변환</button>
-        <textarea class="scriptResult" name="scriptResult" placeholder="전체 결과는 여기에! (업데이트 예정)"></textarea>
+        <textarea class="scriptToChange" name="scriptToChange" placeholder="바꿀 내용을 이곳에 입력해주세요." /></textarea>
+        <div>
+          <button type="submit">❯</button>
+          <button type="button" name="scriptConvertBtn">❮</button>
+        </div>
+        <textarea class="scriptResult" name="scriptResult" placeholder="전체 결과는 여기에 보입니다."></textarea>
       </section>
     </fieldset>
     <fieldset class="fieldset-result">
@@ -34,11 +37,14 @@
   <script src="js/split.js"></script>
   <footer>
     <hr><br>
-
     문의 및 건의는 언제나 자유롭게 DM/멘션 주세요.
     <br>
     <a href="https://twitter.com/urae_clap">@urae_clap</a>
   </footer>
+
+  <!-- script -->
+  <script src="js/split.js"></script>
+  <script src="js/result.js"></script>
 </body>
 
 </html>
