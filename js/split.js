@@ -8,9 +8,9 @@ function submitScript(event) {
 
   const scriptToChangeEl = document.querySelector('textarea[name="scriptToChange"]');
   const scriptToChangeValue = scriptToChangeEl.value;
-  let trimedScript = trimScript(scriptToChangeValue);
+  let trimmedScript = trimScript(scriptToChangeValue);
   
-  makeScriptResult(trimedScript);
+  makeScriptResult(trimmedScript);
 }
 
 function trimScript(scriptToChange) {
@@ -20,9 +20,9 @@ function trimScript(scriptToChange) {
   return result;
 }
 
-function makeScriptResult(trimedScript) {
+function makeScriptResult(trimmedScript) {
   const commandWord = document.querySelector('.command').value;
-  trimedScript.forEach((element) => {
+  trimmedScript.forEach((element) => {
     const content = element.trim();
     const copyText = `${commandWord} ${content}`;
     makeResultDiv(copyText);
