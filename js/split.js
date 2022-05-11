@@ -31,7 +31,6 @@ function makeScriptResult(trimmedScript) {
   commandAddedScript = trimmedScript.map((sentence) => {
     const copyText = `${commandWord} ${sentence.trim()}`;
     makeResultDiv(copyText);
-    console.log(copyText);
     return copyText;
   });
 
