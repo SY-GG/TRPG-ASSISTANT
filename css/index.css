@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap");
 * {
-  font-family: 'IBM Plex Sans KR', sans-serif; }
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  box-sizing: border-box; }
 
 body {
+  width: 90%;
+  margin: 0 auto;
   text-align: center; }
   body ::-webkit-scrollbar {
     height: 90%;
@@ -21,7 +24,7 @@ input {
 
 textarea {
   display: inline;
-  width: 40%;
+  width: 100%;
   padding: 5px 10px;
   border: solid 1px black;
   border-radius: 10px;
@@ -68,6 +71,11 @@ button {
     margin: 5px 0;
     border: none;
     font-size: 1.5em; }
+
+#fieldset-result .resultPaste {
+  width: 85%;
+  height: 100px;
+  margin-bottom: 5px; }
 
 footer {
   padding: 30px;
