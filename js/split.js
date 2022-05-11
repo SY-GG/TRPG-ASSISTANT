@@ -28,20 +28,23 @@ function trimScript(scriptToChange) {
 function makeScriptResult(trimmedScript) {
   const commandWord = document.querySelector('.command').value;
 
-  trimmedScript.forEach((element) => {
-    const content = element.trim();
-    const copyText = `${commandWord} ${content}`;
+  commandAddedScript = trimmedScript.map((sentence) => {
+    const copyText = `${commandWord} ${sentence.trim()}`;
     makeResultDiv(copyText);
+    console.log(copyText);
+    return copyText;
   });
 
-  document.querySelector('textarea[name="scriptResult"]').value = trimmedScript.join('');
+  document.querySelector('textarea[name="scriptResult"]').value = trimmedScript.join(' ');
+  document.querySelector('textarea[name="resultPaste"]').value = commandAddedScript.join('\n');
 }
 
 function resetResultDiv() {
-  const resultField = document.querySelector('.fieldset-result');
-  const resultDiv = document.querySelector('.fieldset-result div');
-  const newDiv = document.createElement('div');
+  const resultDiv = document.querySelector('#fieldset-result .resultDiv div');
   resultDiv.remove();
+
+  const resultField = document.querySelector('#fieldset-result .resultDiv');
+  const newDiv = document.createElement('div');
   resultField.appendChild(newDiv);
 }
 
@@ -52,7 +55,7 @@ addOptionBtn.addEventListener('click', () => {
 });
 
 function makeResultDiv(textValue) {
-  const resultDiv = document.querySelector('.fieldset-result div');
+  const resultDiv = document.querySelector('#fieldset-result .resultDiv div');
   const newResultInput = makeArticle(textValue);
   resultDiv.appendChild(newResultInput);
 }

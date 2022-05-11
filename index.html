@@ -30,21 +30,22 @@
             <button type="submit">❯</button>
             <button type="button" name="scriptConvertBtn">❮</button>
           </div>
-          <textarea class="scriptResult" name="scriptResult" placeholder="전체 결과는 여기에 보입니다."></textarea>
+          <textarea class="scriptResult" name="scriptResult" placeholder="공백 제거 결과는 여기에 보입니다."></textarea>
         </section>
       </fieldset>
-      <fieldset class="fieldset-result">
-        <legend>문장별 결과</legend>
+      <fieldset id="fieldset-result">
+        <legend>결과</legend>
+        <textarea class="resultPaste" name="resultPaste" placeholder="전체 결과는 여기에 보입니다. 더블 클릭하면 복사가 됩니다!"></textarea>
+        <div class="resultDiv">
+          <div></div>
+        </div>
         <button type="button" name="addOptionBtn">임의 추가 </button>
-        <div></div>
       </fieldset>
     </form>
     <script src="js/split.js"></script>
     <footer>
-      <hr><br>
-      문의 및 건의는 언제나 자유롭게 DM/멘션 주세요.
-      <br>
-      <a href="https://twitter.com/woorae_clap">@woorae_clap</a>
+      <hr>
+      <p>Contact : <a href="https://twitter.com/woorae_clap">우레(@woorae_clap)</a></p>
     </footer>
 
     <!-- script -->
