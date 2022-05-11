@@ -3,30 +3,38 @@ scriptForm.addEventListener('submit', submitScript);
 
 function submitScript(event) {
   event.preventDefault();
-  
+
   resetResultDiv();
 
-  const scriptToChangeEl = document.querySelector('textarea[name="scriptToChange"]');
-  const scriptToChangeValue = scriptToChangeEl.value;
-  let trimedScript = trimScript(scriptToChangeValue);
-  
-  makeScriptResult(trimedScript);
+  const scriptToChange = document.querySelector('textarea[name="scriptToChange"]').value;
+  let trimmedScript = trimScript(scriptToChange);
+
+  makeScriptResult(trimmedScript);
 }
 
 function trimScript(scriptToChange) {
-  let result = scriptToChange.replaceAll(/[\n]{1,}/g, '');
-  result = result.replaceAll(/([.]{2,})/g, '…');
-  result = result.split(/(?<=[!?.])/);
+  let result = scriptToChange.replaceAll(/[\n]{1,}}|[\s]{2,}/g, ''); //공백 제거
+
+  const collectDelimeter = () => {
+    const delimeterValue = document.querySelector('input[name=delimeter]').value;
+    return delimeterValue;
+  };
+  const delimeterList = collectDelimeter();
+  const delimitersRegex = new RegExp(`[^${delimeterList}]{1,}[${delimeterList}]{1,}`, 'g');
+  result = result.match(delimitersRegex) ?? [result];
   return result;
 }
 
-function makeScriptResult(trimedScript) {
+function makeScriptResult(trimmedScript) {
   const commandWord = document.querySelector('.command').value;
-  trimedScript.forEach((element) => {
+
+  trimmedScript.forEach((element) => {
     const content = element.trim();
     const copyText = `${commandWord} ${content}`;
     makeResultDiv(copyText);
   });
+
+  document.querySelector('textarea[name="scriptResult"]').value = trimmedScript.join('');
 }
 
 function resetResultDiv() {
@@ -42,7 +50,6 @@ const addOptionBtn = document.querySelector('button[name="addOptionBtn"]');
 addOptionBtn.addEventListener('click', () => {
   makeResultDiv('');
 });
-console.log(addOptionBtn);
 
 function makeResultDiv(textValue) {
   const resultDiv = document.querySelector('.fieldset-result div');
