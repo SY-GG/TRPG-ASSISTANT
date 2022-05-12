@@ -24,6 +24,13 @@
       <fieldset id="fieldset-replace">
         <legend>공백 제거/변환</legend>
         <label>구분자: <input name="delimeter" class="delimeter" value="." placeholder="구분자를 입력해주세요" /></label>
+        <details class="replaceWord-wrap">
+          <summary>단어 바꾸기</summary>
+          <input type="text" name="wordBeforeReplace">
+          ➔
+          <input type="text" name="wordAfterReplace">
+          <button type="button" name="replaceWord">바꾸기</button>
+        </details>
         <section class="replace-wrap">
           <textarea class="scriptToChange" name="scriptToChange" placeholder="바꿀 내용을 이곳에 입력해주세요." /></textarea>
           <div>
@@ -51,6 +58,7 @@
     <script src="js/split.js"></script>
     <script src="js/result.js"></script>
     <script src="js/copy.js"></script>
+    <script src="js/replaceName.js"></script>
 </body>
 
 </html>
