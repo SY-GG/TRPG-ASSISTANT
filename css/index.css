@@ -72,6 +72,11 @@ button {
     border: none;
     font-size: 1.5em; }
 
+#fieldset-replace details.replaceWord-wrap {
+  margin-bottom: 10px; }
+  #fieldset-replace details.replaceWord-wrap summary {
+    margin: 10px; }
+
 #fieldset-result .resultPaste {
   width: 85%;
   height: 100px;

@@ -84,6 +84,12 @@ button {
       font-size: 1.5em;
     }
   }
+  details.replaceWord-wrap {
+    margin-bottom: 10px;
+    summary {
+      margin: 10px;
+    }
+  }
 }
 
 #fieldset-result {
