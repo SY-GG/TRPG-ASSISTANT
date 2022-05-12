@@ -32,7 +32,8 @@ textarea {
 
 button {
   background-color: white;
-  border: 1px solid gray; }
+  border: 1px solid gray;
+  cursor: pointer; }
 
 .main-logo {
   width: 40%; }
@@ -63,14 +64,20 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  gap: 1rem; }
+  align-items: center; }
   #fieldset-replace .replace-wrap button {
-    width: 100%;
+    width: 2em;
     height: 30px;
     margin: 5px 0;
+    padding: 0;
     border: none;
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    line-height: 1.5em; }
+
+#fieldset-replace details.replaceWord-wrap {
+  margin-bottom: 10px; }
+  #fieldset-replace details.replaceWord-wrap summary {
+    margin: 10px; }
 
 #fieldset-replace details.replaceWord-wrap {
   margin-bottom: 10px; }
