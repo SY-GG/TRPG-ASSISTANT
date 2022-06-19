@@ -1,10 +1,13 @@
 import './App.css';
 import ReplaceScript from './component/ReplaceScript';
+import mainlogo from './assets/image/mainlogo(black).png';
 
 function App() {
   return (
     <div className="App">
-      <header></header>
+      <header>
+        <img src={mainlogo} alt="main logo" class="main-logo" />
+      </header>
       <ReplaceScript></ReplaceScript>
     </div>
   );
