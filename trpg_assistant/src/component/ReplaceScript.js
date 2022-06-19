@@ -12,7 +12,14 @@ const TrimSentence = () => {
 
   const submitScript = (e) => {
     e.preventDefault();
+    trimScript(script);
   };
+
+  // 스크립트 정리
+  function trimScript(scriptToChange) {
+    let result = scriptToChange.replaceAll(/[\n]{1,}}|[\s]{2,}/g, ''); //공백 제거
+    setScript(result);
+  }
 
   // 구분자
   const [delimeter, setDelimeter] = useState('.');
