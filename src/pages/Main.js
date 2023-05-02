@@ -1,7 +1,8 @@
 import React from "react";
+import MainHeader from "components/MainHeader";
 
 const Main = () => {
-    return <div> Init Main </div>
-}
+  return <MainHeader></MainHeader>;
+};
 
 export default Main;
